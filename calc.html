@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online calculator</title>
+    <style>
+             @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+      @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+        .calc{
+            width:400px;
+            justify-content: center;
+            left:20;
+            margin-left: 40%;
+            margin-top: 6%;
+            border:3px;
+            border-style: double;
+            background-color:antiquewhite;
+            padding-bottom:10px;
+        }    
+    
+        
+        .content{
+            margin-left: 20px;
+            background-color: rgb(233, 202, 162);
+            margin-right: 20px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+        }
+        h1{
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            text-shadow: 0 0 2px blue,0 0 5px green,0 0 9px whitesmoke;
+            text-align: center;
+            font-variant: small-caps;
+            font-display:inherit;
+            background-color: black;
+            color:white;
+            background: black;
+            font-style: italic;
+            border:1px solid whitesmoke;
+            border-radius: 60px;
+            bottom: 2px;
+            line-height: 30px;
+            background-color: rgb(19, 18, 18);
+            letter-spacing: 3px;
+            animation: anime 20s infinite;
+            
+        }
+        @keyframes anime{
+            0%{
+                box-shadow: 0 0 10px green;
+                text-shadow: 0 0 12px pink;
+            }
+            30%{
+                box-shadow: 0 0 12px blueviolet,0 0 18px blue;
+                text-shadow: 0 0 20px skyblue;
+            }
+            100%{
+                text-shadow: 0 0 30px whitesmoke;
+            }
+        }
+        form{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size:26px;
+            margin-left: 5px;
+            margin-right: 5px;
+            font-style: italic;
+            font-variant: small-caps;
+            color:black;
+            border: 8px solid goldenrod;
+            border-radius: 11px 15px 50px;
+            background:linear-gradient(rgb(178, 221, 178),rgb(180, 180, 235),rgb(223, 163, 163));
+            padding-top: 3px;
+            padding-left: 5px;
+            padding-bottom: 7px;
+                   
+                   
+        }
+        input{
+                     
+            height: 22px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: center;
+            text-transform:uppercase;
+            border-radius: 2px 5px 12px;
+            border-width: 5px  4px 3px;
+            margin-left: 90px;
+
+        }
+        #two{
+            margin-bottom: 50px;
+        }
+        button{
+            font-family:cursive;
+            color:rgb(7, 7, 7);
+            background:linear-gradient(skyblue,rgb(197, 197, 115),pink);
+            width:350px;
+            margin-left: 5px;
+            border-radius: 60px 15px  60px;
+            box-shadow: 0 0 5px green,0 6px blue,0 5px 6px yellow;
+            font-weight: 800;
+            font-size: larger;
+        }
+        h2{
+            text-align: center;
+            border:3px solid black;
+            background-color: black;
+            color:aliceblue;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-variant: small-caps;
+            font-style:italic;
+            animation: ani 1.6s infinite;
+        }
+        @keyframes ani {
+            0%{
+                color:black;
+                background-color: white;
+            }
+            100%{
+                color:white;
+
+                background-color: black;
+            }
+            
+        }
+     /* Portrait mode */
+@media only screen and (max-width: 500px),(max-height:20px) and (orientation: portrait) {
+  /* CSS styles specific to iQOO Z3 in portrait mode */
+}
+
+/* Landscape mode */
+@media only screen and (max-width: 768px) and (orientation: landscape) {
+  /* CSS styles specific to iQOO Z3 in landscape mode */
+}
+
+        
+    </style>
+</head>
+<body>
+    <div class="calc">
+        <div class="content">
+    <h1>--Online calculator--</h1>
+    <form>
+        <td>Enter a Numeric Value</td>
+        <td><input id="inp1" placeholder="Enter Number"/></td>
+        <br><br><br><br>
+        <td id="two">Enter Numeric value</td>
+        <td><input id="inp2" placeholder="Enter  Number"/></td>
+    </form>
+    <div class="oper">
+        <br>
+        <button class="add" onclick="Add()">Addition</button>
+        <br><br><br>
+        <button class="sub" onclick="Sub()">Substraction</button>
+        <br><br><br>
+        <button class="mul" onclick="Mul()">Multiplication</button>
+        <br><br><br>
+        <button class="div" onclick="Div()">Division</button>
+        <br><br>
+        <h2 id="ans">Select any Operation</h2>
+        <br><br>
+        <button class="refresh" onclick="REF()">Refresh</button>
+        </div>
+    </div>
+    </div>
+    <script>
+        function Add()
+        {
+            var i1=parseInt(document.getElementById('inp1').value);
+            var i2=parseInt(document.getElementById('inp2').value);
+            var Ans=i1+i2;
+            document.getElementById('ans').innerHTML=`The Addition Of ${i1} + ${i2} = ${Ans}`;
+        }
+        function Sub()
+        {
+            
+            var i1=parseInt(document.getElementById('inp1').value);
+            var i2=parseInt(document.getElementById('inp2').value);
+            var Ans=i1-i2;
+            document.getElementById('ans').innerHTML=`The Substraction Of ${i1} - ${i2} = ${Ans}`;
+        }
+        function Mul()
+        {
+            
+            var i1=parseInt(document.getElementById('inp1').value);
+            var i2=parseInt(document.getElementById('inp2').value);
+            var Ans=i1*i2;
+            document.getElementById('ans').innerHTML=`The Multiplication Of ${i1} * ${i2} = ${Ans}`;
+        }
+        function Div()
+        {
+            var i1=parseFloat(document.getElementById('inp1').value);
+            var i2=parseFloat(document.getElementById('inp2').value);
+            var Ans=i1/i2;
+            document.getElementById('ans').innerHTML=`The Division Of ${i1} / ${i2} = ${Ans}`;
+        }
+        function REF()
+        {
+            var i1=document.getElementById('inp1').value='';
+            var i2=document.getElementById('inp2').value='';
+            document.getElementById('ans').innerHTML=`SELECT ANY OPERATOR!`;
+        }
+
+        </script>
+</body>
+</html>
